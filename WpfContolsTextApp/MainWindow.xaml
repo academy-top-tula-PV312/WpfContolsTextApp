@@ -1,0 +1,50 @@
+﻿<Window x:Class="WpfContolsTextApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfContolsTextApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel Width="400">
+        <TextBlock x:Name="txtTablo"
+                   FontSize="30" 
+                   TextWrapping="WrapWithOverflow"
+                   TextAlignment="Left"
+                   TextDecorations="None">
+            <Run Foreground="Red">Hello World</Run>
+            <LineBreak/>
+            <Run>Hello People Hello All</Run>
+        </TextBlock>
+
+        <TextBox x:Name="txtEditor"
+                 FontSize="30"
+                 TextWrapping="NoWrap"
+                 MaxLength="520"
+                 TextChanged="TextBox_TextChanged"
+                 AcceptsReturn="True"
+                 AcceptsTab="True"
+                 Height="100"
+                 VerticalScrollBarVisibility="Auto"
+                 HorizontalScrollBarVisibility="Auto"
+                 IsReadOnly="False"
+                 Padding="5">
+            Wow World!
+        </TextBox>
+        <Button x:Name="btnSelect" 
+                Content="Select paste" 
+                Click="btnSelect_Click"
+                FontSize="30"/>
+        <PasswordBox x:Name="password"
+                     FontSize="30"
+                     Password="qwerty"
+                     MaxLength="20"/>
+
+        <Label FontSize="30"
+               Target="{Binding ElementName=txtEditor}">
+            To _Editor
+        </Label>
+
+        <RichTextBox/>
+    </StackPanel>
+</Window>
